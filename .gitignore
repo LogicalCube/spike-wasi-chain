@@ -1,0 +1,9 @@
+.DS_Store
+*~
+# needed for wasi compile
+lib
+# needed for wasi compile
+wasi-sysroot
+wasi-server
+*.wasm
+*.wat
