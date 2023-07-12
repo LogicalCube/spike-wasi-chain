@@ -2,10 +2,13 @@
 
 Playing around with server side WASM. Examples include:
 
-- C program that compiles into a wasi modules
-- Go application that loads the wasi file
+- C99 program that compiles into a wasi module
+- Rust program that compiles into a wasi module
+- Go program that compiles into a wasi module (only works with go 1.21 or tinygo)
 
-## Build the C wasm
+- Go "server" application that loads the wasi files
+
+## Build the C WASI
 
 ```
 cd wasi-c99-client
@@ -19,7 +22,19 @@ _wasi-c99-client_ and copy that to the _wasi-go-server_ directory.
 The _wasm_ file contains the function _sum_ which the go server 
 will call
 
-## Build the Go Client
+## Build the Rust WASI
+
+You need to have [Rust installed](https://www.rust-lang.org/tools/install).
+
+```
+cd wasi-rust-client
+make build
+```
+
+If you don't get any errors, that should create _main.wasm_ in the 
+_wasi-c99-client_ and copy that to the _wasi-go-server_ directory.
+
+## Build the Go Server
 
 ```
 cd wasi-go-server
@@ -30,9 +45,10 @@ make run
 If you don't get any errors, that will run the Go code, load the
 _main.wasm_ file, instantiate and call the _sum_ function.
 
-Depending on how you compile the C wasm file, you might need to modify
-the go server code. Use `make decompile` to have a look at what the
-wasm file requires for callbacks.
+Depending on how you compile the C or Rust wasm file, you might need to modify
+the go server code. 
+
+Use `make decompile` to have a look at what the wasm file requires for import callbacks.
 
 ## Notes
 

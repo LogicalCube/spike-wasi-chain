@@ -22,7 +22,7 @@ func main() {
 	// argument to share, so create that first
 	store := wasmtime.NewStore(wasmtime.NewEngine())
 
-	wasm, err := os.ReadFile("main-c99.wasm")
+	wasm, err := os.ReadFile("main-rust.wasm")
 	if err != nil {
 		panic(err)
 	}
@@ -53,7 +53,6 @@ func main() {
 	// instance, err := wasmtime.NewInstance(store, module, []wasmtime.AsExtern{})
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
-		// panic(err)
 	}
 
 	// After we've instantiated we can lookup our `sum` function and call it.
