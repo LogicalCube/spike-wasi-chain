@@ -8,6 +8,8 @@ Playing around with server side WASM. Examples include:
 
 - Go "server" application that loads the wasi files
 
+If you want to just build and run the compiled WASI files, install the [WasmTime local application](https://wasmtime.dev/) which will allow you to run the .wasm files directly.
+
 ## Build the C WASI
 
 ```
