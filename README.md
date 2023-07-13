@@ -1,12 +1,11 @@
-# WASI Stuff
+# WASI as Plugin Spike
 
-Playing around with server side WASM. Examples include:
+Playing around with server side WASM (WASI). Examples include:
 
 - C99 program that compiles into a wasi module
 - Rust program that compiles into a wasi module
 - Go program that compiles into a wasi module (only works with go 1.21 or tinygo)
-
-- Go "server" application that loads the wasi files
+- Go "server" application that loads the wasi files and calls a `sum` function
 
 If you want to just build and run the compiled WASI files, install the [WasmTime local application](https://wasmtime.dev/) which will allow you to run the .wasm files directly.
 
@@ -50,7 +49,7 @@ _main.wasm_ file, instantiate and call the _sum_ function.
 Depending on how you compile the C or Rust wasm file, you might need to modify
 the go server code. 
 
-Use `make decompile` to have a look at what the wasm file requires for import callbacks.
+Use `make decompile` to have a look at the `wat` files - what the wasm file requires for import callbacks.
 
 ## Notes
 
@@ -59,4 +58,3 @@ Use `make decompile` to have a look at what the wasm file requires for import ca
 - wasm-objdump: print information about a wasm binary. It is similar to objdump.
 - wasm-strip: remove sections of a WebAssembly binary file
 - wasm-validate: validate a file in the WebAssembly binary format
-

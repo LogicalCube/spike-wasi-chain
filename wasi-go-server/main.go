@@ -34,7 +34,6 @@ func walkPlugins(root string) ([]string, error) {
 
 func main() {
 	// Almost all operations in wasmtime require a contextual `store`
-	// argument to share, so create that first
 	store := wasmtime.NewStore(wasmtime.NewEngine())
 
 	// get all the wasm files
@@ -96,7 +95,7 @@ func main() {
 			panic(err)
 		}
 
-		fmt.Printf("sum from %s module ---> 3 + 4 = %v\n", i, val)
+		fmt.Printf("sum from %s module \t 3 + 4 = %v\n", i, val)
 	}
 
 }
