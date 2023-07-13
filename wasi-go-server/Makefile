@@ -16,7 +16,7 @@ clean:
 
 # ####################################
 # Decompile WASM to WAT for debugging
-WASMS=$(wildcard *.wasm)
+WASMS=$(wildcard plugins/*.wasm)
 WATS=$(WASMS:.wasm=.wat)
 %.wat : %.wasm
 	wasm2wat $< -o $@

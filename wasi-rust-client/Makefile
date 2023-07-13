@@ -8,7 +8,7 @@ build:
 	rustup target add wasm32-wasi
 	rustc $(ENTRY).rs \
 		--target wasm32-wasi
-	cp $(ENTRY).wasm ../wasi-go-server/$(ENTRY)-rust.wasm
+	cp $(ENTRY).wasm ../wasi-go-server/plugins/$(ENTRY)-rust.wasm
 
 run:
 	$(WASM_RUNNER) main.wasm

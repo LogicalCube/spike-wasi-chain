@@ -26,7 +26,7 @@ build:
 		-o $(ENTRY).wasm \
 		$(PWD)/lib/wasi/libclang_rt.builtins-wasm32.a \
 		$(ENTRY).c
-	cp $(ENTRY).wasm ../wasi-go-server/$(ENTRY)-c99.wasm
+	cp $(ENTRY).wasm ../wasi-go-server/plugins/$(ENTRY)-c99.wasm
 
 run:
 # 	Run the "main" function
